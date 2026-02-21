@@ -1,6 +1,6 @@
 <?php
 // เชื่อมต่อ DB
-$host = "Warusnee";
+$host = "mariadb";
 $user = "warusnee";
 $pass = "4412";
 $db   = "Warusnee";
@@ -229,5 +229,6 @@ $conn->query($sql);
 </body>
 
 </html>
+
 
 
