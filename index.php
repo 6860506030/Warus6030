@@ -1,3 +1,26 @@
+<?php
+// เชื่อมต่อ DB
+$host = "Warusnee";
+$user = "warusnee";
+$pass = "4412";
+$db   = "Warusnee";
+
+$conn = new mysqli($host, $user, $pass, $db);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// CREATE TABLE
+$sql = "CREATE TABLE IF NOT EXISTS trees (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    height INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)";
+$conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -206,4 +229,5 @@
 </body>
 
 </html>
+
 
