@@ -10,7 +10,12 @@ $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
+if(isset($_POST['add'])){
+    $value = $conn->real_escape_string($_POST['value']);
+    $conn->query("INSERT INTO trees (name) VALUES ('$value')");
+    header("Location: ".$_SERVER['PHP_SELF']);
+    exit();
+}
 // CREATE TABLE
 $sql = "CREATE TABLE IF NOT EXISTS trees (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -229,6 +234,7 @@ $conn->query($sql);
 </body>
 
 </html>
+
 
 
 
