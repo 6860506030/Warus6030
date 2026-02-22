@@ -1,3 +1,4 @@
+<?php die("HELLO TEST"); ?>
 <?php
 // เชื่อมต่อ DB
 $host = "mariadb";
@@ -235,6 +236,7 @@ $conn->query($sql);
 </body>
 
 </html>
+
 
 
 
