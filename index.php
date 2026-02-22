@@ -10,6 +10,7 @@ $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+echo "DB CONNECTED";
 if(isset($_POST['add'])){
     $value = $conn->real_escape_string($_POST['value']);
     $conn->query("INSERT INTO trees (name) VALUES ('$value')");
@@ -234,6 +235,7 @@ $conn->query($sql);
 </body>
 
 </html>
+
 
 
 
